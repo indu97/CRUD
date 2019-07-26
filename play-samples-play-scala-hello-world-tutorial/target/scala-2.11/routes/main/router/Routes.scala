@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/indu.c/Downloads/play-samples-play-scala-hello-world-tutorial/conf/routes
-// @DATE:Thu Jul 25 12:42:12 IST 2019
+// @DATE:Fri Jul 26 14:00:43 IST 2019
 
 package router
 
@@ -59,9 +59,9 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """explore""", """controllers.HomeController.explore"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """tutorial""", """controllers.HomeController.tutorial"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """getemployee""", """controllers.EmployeeController.Getemployee"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """""" + "$" + """id<[^/]+>""", """controllers.getController.get(id:Long)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """del/""" + "$" + """id<[^/]+>""", """controllers.delController.del(id:Long)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """update/""" + "$" + """id<[^/]+>/""" + "$" + """FirstName<[^/]+>/""" + "$" + """LastName<[^/]+>/""" + "$" + """PhoneNumber<[^/]+>""", """controllers.updateController.update(id:Long, FirstName:String, LastName:String, PhoneNumber:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """get/""" + "$" + """id<[^/]+>""", """controllers.getController.get(id:Long)"""),
+    ("""DELETE""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """del/""" + "$" + """id<[^/]+>""", """controllers.delController.del(id:Long)"""),
+    ("""PUT""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """put/""" + "$" + """id<[^/]+>""", """controllers.updateController.update(id:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -144,7 +144,7 @@ class Routes(
 
   // @LINE:13
   private[this] lazy val controllers_getController_get4_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), DynamicPart("id", """[^/]+""",true)))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("get/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_getController_get4_invoker = createInvoker(
     getController_1.get(fakeValue[Long]),
@@ -154,14 +154,14 @@ class Routes(
       "get",
       Seq(classOf[Long]),
       "GET",
-      this.prefix + """""" + "$" + """id<[^/]+>""",
+      this.prefix + """get/""" + "$" + """id<[^/]+>""",
       """""",
       Seq()
     )
   )
 
   // @LINE:14
-  private[this] lazy val controllers_delController_del5_route = Route("GET",
+  private[this] lazy val controllers_delController_del5_route = Route("DELETE",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("del/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_delController_del5_invoker = createInvoker(
@@ -171,7 +171,7 @@ class Routes(
       "controllers.delController",
       "del",
       Seq(classOf[Long]),
-      "GET",
+      "DELETE",
       this.prefix + """del/""" + "$" + """id<[^/]+>""",
       """""",
       Seq()
@@ -179,18 +179,18 @@ class Routes(
   )
 
   // @LINE:15
-  private[this] lazy val controllers_updateController_update6_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("update/"), DynamicPart("id", """[^/]+""",true), StaticPart("/"), DynamicPart("FirstName", """[^/]+""",true), StaticPart("/"), DynamicPart("LastName", """[^/]+""",true), StaticPart("/"), DynamicPart("PhoneNumber", """[^/]+""",true)))
+  private[this] lazy val controllers_updateController_update6_route = Route("PUT",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("put/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_updateController_update6_invoker = createInvoker(
-    updateController_3.update(fakeValue[Long], fakeValue[String], fakeValue[String], fakeValue[String]),
+    updateController_3.update(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.updateController",
       "update",
-      Seq(classOf[Long], classOf[String], classOf[String], classOf[String]),
-      "GET",
-      this.prefix + """update/""" + "$" + """id<[^/]+>/""" + "$" + """FirstName<[^/]+>/""" + "$" + """LastName<[^/]+>/""" + "$" + """PhoneNumber<[^/]+>""",
+      Seq(classOf[Long]),
+      "PUT",
+      this.prefix + """put/""" + "$" + """id<[^/]+>""",
       """""",
       Seq()
     )
@@ -255,8 +255,8 @@ class Routes(
   
     // @LINE:15
     case controllers_updateController_update6_route(params@_) =>
-      call(params.fromPath[Long]("id", None), params.fromPath[String]("FirstName", None), params.fromPath[String]("LastName", None), params.fromPath[String]("PhoneNumber", None)) { (id, FirstName, LastName, PhoneNumber) =>
-        controllers_updateController_update6_invoker.call(updateController_3.update(id, FirstName, LastName, PhoneNumber))
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_updateController_update6_invoker.call(updateController_3.update(id))
       }
   
     // @LINE:19

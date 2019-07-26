@@ -15,5 +15,5 @@ libraryDependencies += "com.typesafe" % "config" % "1.3.1"
 libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.34"
 libraryDependencies += "com.typesafe.play" %% "play-slick" % "3.0.0"
 libraryDependencies += "com.typesafe.play" %% "play-slick-evolutions" % "3.0.0"
-
-
+libraryDependencies += "com.typesafe.play" %% "play-json" % "2.6.0"
+libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.34"

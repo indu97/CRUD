@@ -10,9 +10,9 @@ GET     /tutorial                           controllers.HomeController.tutorial
 
 GET     /getemployee                             controllers.EmployeeController.Getemployee
 
-GET     /:id                        controllers.getController.get(id: Long)
-GET     /del/:id                          controllers.delController.del(id: Long)
-GET     /update/:id/:FirstName/:LastName/:PhoneNumber                controllers.updateController.update(id: Long, FirstName: String, LastName: String, PhoneNumber: String)
+GET     /get/:id                        controllers.getController.get(id: Long)
+DELETE     /del/:id                          controllers.delController.del(id: Long)
+PUT     /put/:id                controllers.updateController.update(id: Long)
 
 
 # Map static resources from the /public folder to the /assets URL path

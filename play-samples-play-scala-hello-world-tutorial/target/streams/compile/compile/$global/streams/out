@@ -1,18 +1,8 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\app\controllers\updateController.scala:25:67: not found: value JSON_CONTETNT_TYPE[0m
-[0m[[0m[31merror[0m] [0m[0m        Created(Json.toJson(Json.toJson(Json.toJson(result)))).as(JSON_CONTETNT_TYPE)[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                  ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\app\controllers\updateController.scala:22:50: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : play.api.libs.json.JsResult[scala.concurrent.Future[play.api.mvc.Result]][0m
-[0m[[0m[31merror[0m] [0m[0m required: scala.concurrent.Future[play.api.mvc.Result][0m
-[0m[[0m[31merror[0m] [0m[0m    request.body.validate[Employeestructure].map { product =>[0m
-[0m[[0m[31merror[0m] [0m[0m                                                 ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\app\dao\EmployeeDAO.scala:30:83: not found: value FirstName[0m
-[0m[[0m[31merror[0m] [0m[0m    val newRecord: Employeestructure = iproduct.copy(id = Option(id), FirstName = FirstName, LastName = LastName, PhoneNumber = PhoneNumber)[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                                  ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\app\dao\EmployeeDAO.scala:30:105: not found: value LastName[0m
-[0m[[0m[31merror[0m] [0m[0m    val newRecord: Employeestructure = iproduct.copy(id = Option(id), FirstName = FirstName, LastName = LastName, PhoneNumber = PhoneNumber)[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                                                        ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\app\dao\EmployeeDAO.scala:30:129: not found: value PhoneNumber[0m
-[0m[[0m[31merror[0m] [0m[0m    val newRecord: Employeestructure = iproduct.copy(id = Option(id), FirstName = FirstName, LastName = LastName, PhoneNumber = PhoneNumber)[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                                                                                ^[0m
-[0m[[0m[31merror[0m] [0m[0m5 errors found[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\app\dto\EmployeeDTO.scala:1:1: [0m
+[0m[[0m[33mwarn[0m] [0m[0mFound names but no class, trait or object is defined in the compilation unit.[0m
+[0m[[0m[33mwarn[0m] [0m[0mThe incremental compiler cannot record the dependency information in such case.[0m
+[0m[[0m[33mwarn[0m] [0m[0mSome errors like unused import referring to a non-existent class might not be reported.[0m
+[0m[[0m[33mwarn[0m] [0m[0m    [0m
+[0m[[0m[33mwarn[0m] [0m[0mpackage dto[0m
+[0m[[0m[33mwarn[0m] [0m[0m^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

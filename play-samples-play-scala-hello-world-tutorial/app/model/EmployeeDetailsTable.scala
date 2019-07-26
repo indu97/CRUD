@@ -1,7 +1,7 @@
 package model
 
 import play.api.libs.functional.syntax.{toFunctionalBuilderOps, unlift}
-import play.api.libs.json.{JsPath, Reads, Writes}
+import play.api.libs.json.{JsPath, Json, Reads, Writes}
 import slick.jdbc.MySQLProfile.api.{Table, anyToShapedValue, longColumnType, stringColumnType}
 import slick.lifted.Tag
 
@@ -33,16 +33,17 @@ PhoneNumber) <> (
 
 
 object Employeestructure {
-  implicit val EmployeeStructureRead: Reads[Employeestructure] = (
+  implicit val writes = new Writes[Employeestructure] {
+    def writes(employeeDTO:Employeestructure) = Json.obj(
+      "id" -> employeeDTO.id,
+      "FirstName" -> employeeDTO.FirstName,
+      "LastName" -> employeeDTO.LastName,
+      "PhoneNumber" -> employeeDTO.PhoneNumber)
+  }
+
+  implicit val reads: Reads[Employeestructure] = (
     (JsPath \ "id").readNullable[Long] and
       (JsPath \ "FirstName").read[String] and
       (JsPath \ "LastName").read[String] and
-      (JsPath \ "PhoneNumber").read[String] )(Employeestructure.apply _)
-
-  implicit val EmployeeStructureWrite: Writes[Employeestructure] = (
-    (JsPath \ "id").writeNullable[Long] and
-      (JsPath \ "FirstName").write[String] and
-      (JsPath \ "LastName").write[String] and
-      (JsPath \ "PhoneNumber").write[String]
-    )(unlift(Employeestructure.unapply))
+      (JsPath \ "PhoneNumber").read[String])(Employeestructure.apply _)
 }
