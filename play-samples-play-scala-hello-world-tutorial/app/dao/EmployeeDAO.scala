@@ -35,10 +35,10 @@ class EmployeeDAO @Inject() (protected val dbConfigProvider: DatabaseConfigProvi
     }
   }
 
-  def insert(acceGroup: AccessGroup): Future[AccessGroup] = {
-    val currentDate = new Date(Calendar.getInstance().getTime().getTime());
-    val acceGroupNew: AccessGroup = acceGroup.copy(createdBy = acceGroup.createdBy, modifidedBy = acceGroup.modifidedBy)
+  def insert(iproduct:Employeestructure): Future[Employeestructure] = {
+    //val currentDate = new Date(Calendar.getInstance().getTime().getTime());
+    val empNew: Employeestructure = iproduct.copy(id = iproduct.id, FirstName = iproduct.FirstName, LastName = iproduct.LastName, PhoneNumber = iproduct.PhoneNumber)
 
-    db.run((accessGroupTable returning accessGroupTable.map(_.id) into ((accessGroupTable, id) => accessGroupTable.copy(id = id))) += acceGroupNew)
+    db.run((employeeDetailsTable returning employeeDetailsTable.map(_.id) into ((employeeDetailsTable, id) => employeeDetailsTable.copy(id = id))) += empNew)
   }
 }

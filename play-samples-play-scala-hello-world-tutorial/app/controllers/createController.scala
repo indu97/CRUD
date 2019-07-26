@@ -20,7 +20,7 @@ class createController  @Inject()(cc: ControllerComponents,variab: EmployeeDAO) 
     //}
   }*/
 
-  def create(id: Long) = Action.async(parse.json) { request =>
+  def create = Action.async(parse.json) { request =>
     request.body.validate[Employeestructure].map { emp =>
       variab.insert(emp).map {
         result => Created(Json.toJson(result))
