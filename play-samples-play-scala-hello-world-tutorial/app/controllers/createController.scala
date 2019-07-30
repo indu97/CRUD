@@ -12,13 +12,6 @@ import scala.concurrent.duration.Duration
 
 class createController  @Inject()(cc: ControllerComponents,variab: EmployeeDAO) extends AbstractController(cc) {
 
-  /*def update(id: Long) = Action.async(parse.json) { implicit request =>
-    var employee = request.body.as(Employeestructure.reads)
-    var resultObj = variab.updateEmployeestructure(id, employee)
-    var result = Await.result(resultObj, Duration.Inf)
-    Future { Ok(Json.toJson(result)) }
-    //}
-  }*/
 
   def create = Action.async(parse.json) { request =>
     request.body.validate[Employeestructure].map { emp =>

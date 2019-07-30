@@ -14,6 +14,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../target/scala-2.11/routes/test" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../target/scala-2.11/src_managed/test" isTestSource="true" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../target/scala-2.11/twirl/test" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../test" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/../../target" />
       <excludeFolder url="file://$MODULE_DIR$/../../target/scala-2.13" />
       <excludeFolder url="file://$MODULE_DIR$/../../target/streams" />
@@ -22,6 +23,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="sbt: aopalliance:aopalliance:1.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scalactic:scalactic_2.11:3.0.8:jar" level="project" />
     <orderEntry type="library" scope="TEST" name="sbt: net.bytebuddy:byte-buddy:1.8.15:jar" level="project" />
     <orderEntry type="library" name="sbt: com.typesafe.slick:slick_2.11:3.2.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.typesafe.slick:slick-hikaricp_2.11:3.2.0:jar" level="project" />
@@ -140,5 +142,6 @@
     <orderEntry type="library" name="sbt: com.typesafe.play:play-slick-evolutions_2.11:3.0.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.typesafe.play:play-jdbc-api_2.11:2.6.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.zaxxer:HikariCP:2.5.1:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scalatest:scalatest_2.11:3.0.8:jar" level="project" />
   </component>
 </module>

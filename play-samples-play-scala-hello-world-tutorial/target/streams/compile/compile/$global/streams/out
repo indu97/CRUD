@@ -1,5 +1,10 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\app\controllers\createController.scala:25:20: not enough arguments for method insert: (iproduct: model.Employeestructure, id: Long)scala.concurrent.Future[model.Employeestructure].[0m
-[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter id.[0m
-[0m[[0m[31merror[0m] [0m[0m      variab.insert(emp).map {[0m
-[0m[[0m[31merror[0m] [0m[0m                   ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\app\test\Basetest.scala:1:12: object scalatest is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.scalatest.FunSpec[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\app\test\Basetest.scala:14:81: not found: type FunSpec[0m
+[0m[[0m[31merror[0m] [0m[0mclass Basetest (protected val dbConfigProvider: DatabaseConfigProvider) extends FunSpec{[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\app\test\Basetest.scala:18:3: not found: value it[0m
+[0m[[0m[31merror[0m] [0m[0m  it("Should work only for existing id" ){[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mthree errors found[0m
