@@ -10,11 +10,14 @@ scalaVersion := "2.11.12"
 libraryDependencies += guice
 //libraryDependencies += javaJdbc
 libraryDependencies += cache
-
 libraryDependencies += "com.typesafe" % "config" % "1.3.1"
 libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.34"
 libraryDependencies += "com.typesafe.play" %% "play-slick" % "3.0.0"
 libraryDependencies += "com.typesafe.play" %% "play-slick-evolutions" % "3.0.0"
 libraryDependencies += "com.typesafe.play" %% "play-json" % "2.6.0"
+libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2"
 libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.34"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8" % "test"
+libraryDependencies += "com.novocode" % "junit-interface" % "0.11" % "test"
+testOptions += Tests.Argument(TestFrameworks.JUnit, "-v")
+libraryDependencies += "org.mockito" % "mockito-core" % "0.30" % "test"

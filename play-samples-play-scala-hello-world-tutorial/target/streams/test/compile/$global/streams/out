@@ -1,0 +1,25 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\test\controllers\getControllerSpec.scala:10:12: object mockito is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.mockito.Mockito._[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\test\controllers\getControllerSpec.scala:21:53: Symbol 'term org.mockito' is missing from the classpath.[0m
+[0m[[0m[31merror[0m] [0m[0mThis symbol is required by 'value org.scalatest.mockito.MockitoSugar.mockSettings'.[0m
+[0m[[0m[31merror[0m] [0m[0mMake sure that term mockito is in your classpath and check for conflicting dependencies with `-Ylog-classpath`.[0m
+[0m[[0m[31merror[0m] [0m[0mA full rebuild may help if 'MockitoSugar.class' was compiled against an incompatible version of org.[0m
+[0m[[0m[31merror[0m] [0m[0m  private val mockedEmployeeDAO: EmployeeDAO = mock[EmployeeDAO][0m
+[0m[[0m[31merror[0m] [0m[0m                                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\test\controllers\getControllerSpec.scala:27:5: not found: value when[0m
+[0m[[0m[31merror[0m] [0m[0m    when(mockedEmployeeDAO.getEmployeestructure(6)).thenReturn(null)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\test\controllers\getControllerSpec.scala:29:35: not found: value GET[0m
+[0m[[0m[31merror[0m] [0m[0m    val fakeRequest = FakeRequest(GET, s"/something")[0m
+[0m[[0m[31merror[0m] [0m[0m                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\test\controllers\getControllerSpec.scala:30:20: not found: value HOST[0m
+[0m[[0m[31merror[0m] [0m[0m      .withHeaders(HOST -> "localhost:9000")[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\test\controllers\getControllerSpec.scala:36:5: not found: value status[0m
+[0m[[0m[31merror[0m] [0m[0m    status(result) must be OK[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\test\controllers\getControllerSpec.scala:37:5: not found: value contentAsJson[0m
+[0m[[0m[31merror[0m] [0m[0m    contentAsJson(result) mustBe null // you probably need to tweek this part[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m7 errors found[0m

@@ -4,7 +4,7 @@
 		module="play-scala-seed_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20190729124824"
+		publication="20190730184411"
 	>
 		<description>
 		play-scala-seed
@@ -58,6 +58,9 @@
 		<dependency org="com.typesafe.play" name="play-slick_2.11" rev="3.0.0" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-slick-evolutions_2.11" rev="3.0.0" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-json_2.11" rev="2.6.0" conf="compile->default(compile)"/>
+		<dependency org="org.scalatestplus.play" name="scalatestplus-play_2.11" rev="3.1.2" conf="compile->default(compile)"/>
 		<dependency org="org.scalatest" name="scalatest_2.11" rev="3.0.8" conf="test->default(compile)"/>
+		<dependency org="com.novocode" name="junit-interface" rev="0.11" conf="test->default(compile)"/>
+		<dependency org="org.mockito" name="mockito-core" rev="0.30" conf="test->default(compile)"/>
 	</dependencies>
 </ivy-module>
