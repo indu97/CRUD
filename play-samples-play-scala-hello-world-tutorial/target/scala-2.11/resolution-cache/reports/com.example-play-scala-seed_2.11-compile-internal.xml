@@ -7,8 +7,56 @@
 		revision="1.0-SNAPSHOT"
 		conf="compile-internal"
 		confs="compile, runtime, test, provided, optional, web-assets, web-assets-test, web-plugin, universal, universal-docs, universal-src, windows, docker, linux, rpm, debian, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool, docs"
-		date="20190730184411"/>
+		date="20190731115542"/>
 	<dependencies>
+		<module organisation="org.mockito" name="mockito-core">
+			<revision name="2.10.0" status="release" pubdate="20170908212112" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/mockito/mockito" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="127">
+				<license name="The MIT License" url="https://github.com/mockito/mockito/blob/master/LICENSE"/>
+				<metadata-artifact status="no" details="" size="2999" time="0" location="C:\Users\indu.c\.ivy2\cache\org.mockito\mockito-core\ivy-2.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/mockito/mockito-core/2.10.0/mockito-core-2.10.0.pom"/>
+				<caller organisation="com.example" name="play-scala-seed_2.11" conf="compile-internal, compile, provided, optional" rev="2.10.0" rev-constraint-default="2.10.0" rev-constraint-dynamic="2.10.0" callerrev="1.0-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="mockito-core" type="jar" ext="jar" status="no" details="" size="534696" time="0" location="C:\Users\indu.c\.ivy2\cache\org.mockito\mockito-core\jars\mockito-core-2.10.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/mockito/mockito-core/2.10.0/mockito-core-2.10.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.objenesis" name="objenesis">
+			<revision name="2.6" status="release" pubdate="20170620205837" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://objenesis.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="130">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3493" time="0" location="C:\Users\indu.c\.ivy2\cache\org.objenesis\objenesis\ivy-2.6.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/objenesis/objenesis/2.6/objenesis-2.6.pom"/>
+				<caller organisation="org.mockito" name="mockito-core" conf="default, compile, runtime, master" rev="2.6" rev-constraint-default="2.6" rev-constraint-dynamic="2.6" callerrev="2.10.0"/>
+				<artifacts>
+					<artifact name="objenesis" type="jar" ext="jar" status="no" details="" size="55684" time="0" location="C:\Users\indu.c\.ivy2\cache\org.objenesis\objenesis\jars\objenesis-2.6.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/objenesis/objenesis/2.6/objenesis-2.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="net.bytebuddy" name="byte-buddy-agent">
+			<revision name="1.7.4" status="release" pubdate="20170831021306" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="129">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="7485" time="0" location="C:\Users\indu.c\.ivy2\cache\net.bytebuddy\byte-buddy-agent\ivy-1.7.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy-agent/1.7.4/byte-buddy-agent-1.7.4.pom"/>
+				<caller organisation="org.mockito" name="mockito-core" conf="default, compile, runtime, master" rev="1.7.4" rev-constraint-default="1.7.4" rev-constraint-dynamic="1.7.4" callerrev="2.10.0"/>
+				<artifacts>
+					<artifact name="byte-buddy-agent" type="jar" ext="jar" status="no" details="" size="42935" time="0" location="C:\Users\indu.c\.ivy2\cache\net.bytebuddy\byte-buddy-agent\jars\byte-buddy-agent-1.7.4.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy-agent/1.7.4/byte-buddy-agent-1.7.4.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="net.bytebuddy" name="byte-buddy">
+			<revision name="1.7.4" status="release" pubdate="20170831021311" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="128">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="successful" details="" size="12211" time="1006" location="C:\Users\indu.c\.ivy2\cache\net.bytebuddy\byte-buddy\ivy-1.7.4.xml" searched="true" original-local-location="C:\Users\indu.c\.ivy2\cache\net.bytebuddy\byte-buddy\ivy-1.7.4.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy/1.7.4/byte-buddy-1.7.4.pom"/>
+				<caller organisation="org.mockito" name="mockito-core" conf="default, compile, runtime, master" rev="1.7.4" rev-constraint-default="1.7.4" rev-constraint-dynamic="1.7.4" callerrev="2.10.0"/>
+				<artifacts>
+					<artifact name="byte-buddy" type="jar" ext="jar" status="successful" details="" size="2859494" time="5208" location="C:\Users\indu.c\.ivy2\cache\net.bytebuddy\byte-buddy\jars\byte-buddy-1.7.4.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy/1.7.4/byte-buddy-1.7.4.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
 		<module organisation="org.scalatestplus.play" name="scalatestplus-play_2.11">
 			<revision name="3.1.2" status="release" pubdate="20170916012044" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/playframework/scalatestplus-play" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="66">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>

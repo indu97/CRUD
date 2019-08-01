@@ -20,4 +20,4 @@ libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.34"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8" % "test"
 libraryDependencies += "com.novocode" % "junit-interface" % "0.11" % "test"
 testOptions += Tests.Argument(TestFrameworks.JUnit, "-v")
-libraryDependencies += "org.mockito" % "mockito-core" % "0.30" % "test"
+libraryDependencies += "org.mockito" % "mockito-core" % "2.10.0"

@@ -55,7 +55,7 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-07-30T18:23:35.588
+                  DATE: 2019-07-31T11:52:01.446
                   SOURCE: C:/Users/indu.c/Downloads/play-samples-play-scala-hello-world-tutorial/app/views/index.scala.html
                   HASH: 5766db80becfe392cd3a685fb2cefd4ba0f86631
                   MATRIX: 722->1|818->3|848->8|871->23|910->25|938->28|985->67|1035->80|1065->84|1197->190|1233->205|1266->211|1329->244

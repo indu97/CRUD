@@ -4,7 +4,7 @@
 		module="play-scala-seed_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20190730184411"
+		publication="20190731115542"
 	>
 		<description>
 		play-scala-seed
@@ -61,6 +61,6 @@
 		<dependency org="org.scalatestplus.play" name="scalatestplus-play_2.11" rev="3.1.2" conf="compile->default(compile)"/>
 		<dependency org="org.scalatest" name="scalatest_2.11" rev="3.0.8" conf="test->default(compile)"/>
 		<dependency org="com.novocode" name="junit-interface" rev="0.11" conf="test->default(compile)"/>
-		<dependency org="org.mockito" name="mockito-core" rev="0.30" conf="test->default(compile)"/>
+		<dependency org="org.mockito" name="mockito-core" rev="2.10.0" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>
