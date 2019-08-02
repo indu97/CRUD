@@ -14,7 +14,7 @@ class delController  @Inject()(cc: ControllerComponents,variab: EmployeeDAO) ext
   def del(id: Long) = Action.async { request =>
 
     variab.delEmployeestructure(id).map { result =>
-      Ok("Record Deleted")
+      Ok("true")
     }
   }
 

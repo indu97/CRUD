@@ -21,6 +21,7 @@ class EmployeeDAO @Inject() (protected val dbConfigProvider: DatabaseConfigProvi
 
   def delEmployeestructure(id: Long): Future[Boolean] = {
 
+
     db.run(employeeDetailsTable.filter(_.id === id).delete).map { affectedRows =>
       affectedRows > 0
     }

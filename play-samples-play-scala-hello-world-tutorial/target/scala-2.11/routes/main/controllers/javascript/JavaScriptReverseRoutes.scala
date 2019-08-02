@@ -1,16 +1,16 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/indu.c/Downloads/play-samples-play-scala-hello-world-tutorial/conf/routes
-// @DATE:Wed Jul 31 11:52:00 IST 2019
+// @DATE:Thu Aug 01 15:52:55 IST 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
 
 import _root_.controllers.Assets.Asset
 
-// @LINE:7
+// @LINE:10
 package controllers.javascript {
 
-  // @LINE:18
+  // @LINE:15
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -18,7 +18,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:18
+    // @LINE:15
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -30,7 +30,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:13
+  // @LINE:10
   class ReversegetController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -38,19 +38,19 @@ package controllers.javascript {
     }
 
   
-    // @LINE:13
+    // @LINE:10
     def get: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.getController.get",
       """
         function(id0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "get/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("id", id0))})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("id", id0))})
         }
       """
     )
   
   }
 
-  // @LINE:15
+  // @LINE:12
   class ReverseupdateController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -58,7 +58,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:15
+    // @LINE:12
     def update: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.updateController.update",
       """
@@ -70,7 +70,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:16
+  // @LINE:13
   class ReversecreateController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -78,7 +78,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:16
+    // @LINE:13
     def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.createController.create",
       """
@@ -90,47 +90,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:7
-  class ReverseHomeController(_prefix: => String) {
-
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:7
-    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.index",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + """"})
-        }
-      """
-    )
-  
-    // @LINE:9
-    def tutorial: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.tutorial",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "tutorial"})
-        }
-      """
-    )
-  
-    // @LINE:8
-    def explore: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.explore",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "explore"})
-        }
-      """
-    )
-  
-  }
-
-  // @LINE:14
+  // @LINE:11
   class ReversedelController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -138,32 +98,12 @@ package controllers.javascript {
     }
 
   
-    // @LINE:14
+    // @LINE:11
     def del: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.delController.del",
       """
         function(id0) {
           return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "del/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("id", id0))})
-        }
-      """
-    )
-  
-  }
-
-  // @LINE:11
-  class ReverseEmployeeController(_prefix: => String) {
-
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:11
-    def Getemployee: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.EmployeeController.Getemployee",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "getemployee"})
         }
       """
     )

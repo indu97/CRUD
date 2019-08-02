@@ -1,13 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\test\controllers\getControllerSpec.scala:31:35: not found: value GET[0m
-[0m[[0m[31merror[0m] [0m[0m    val fakeRequest = FakeRequest(GET, s"/something")[0m
-[0m[[0m[31merror[0m] [0m[0m                                  ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\test\controllers\getControllerSpec.scala:32:20: not found: value HOST[0m
-[0m[[0m[31merror[0m] [0m[0m      .withHeaders(HOST -> "localhost:8080")[0m
-[0m[[0m[31merror[0m] [0m[0m                   ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\test\controllers\getControllerSpec.scala:38:5: not found: value status[0m
-[0m[[0m[31merror[0m] [0m[0m    status(result) must be OK[0m
-[0m[[0m[31merror[0m] [0m[0m    ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\test\controllers\getControllerSpec.scala:39:5: not found: value contentAsJson[0m
-[0m[[0m[31merror[0m] [0m[0m    contentAsJson(result) mustBe null // you probably need to tweek this part[0m
-[0m[[0m[31merror[0m] [0m[0m    ^[0m
-[0m[[0m[31merror[0m] [0m[0mfour errors found[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\test\controllers\getControllerSpec.scala:43:24: could not find implicit value for parameter mat: akka.stream.Materializer[0m
+[0m[[0m[31merror[0m] [0m[0m    val j=contentAsJson(res).toString()[0m
+[0m[[0m[31merror[0m] [0m[0m                       ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
