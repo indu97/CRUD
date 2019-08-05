@@ -4,7 +4,7 @@
 		module="play-scala-seed_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20190801181042"
+		publication="20190802162531"
 	>
 		<description>
 		play-scala-seed
@@ -64,7 +64,5 @@
 		<dependency org="org.mockito" name="mockito-core" rev="2.8.47" conf="test->default(compile)"/>
 		<dependency org="org.mockito" name="mockito-all" rev="1.9.5" conf="test->default(compile)"/>
 		<dependency org="org.mockito" name="mockito-core" rev="2.10.0" conf="compile->default(compile)"/>
-		<dependency org="org.scala-lang.modules" name="scala-parser-combinators_2.11" rev="1.1.1" conf="compile->default(compile)"/>
-		<dependency org="io.spray" name="spray-json_2.11" rev="1.3.5" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/indu.c/Downloads/play-samples-play-scala-hello-world-tutorial/conf/routes
-// @DATE:Thu Aug 01 15:52:55 IST 2019
+// @DATE:Fri Aug 02 16:44:08 IST 2019
 
 package router
 
@@ -51,7 +51,7 @@ class Routes(
   }
 
   def documentation = List(
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """""" + "$" + """id<[^/]+>""", """controllers.getController.get(id:Long)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """get/""" + "$" + """id<[^/]+>""", """controllers.getController.get(id:Long)"""),
     ("""DELETE""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """del/""" + "$" + """id<[^/]+>""", """controllers.delController.del(id:Long)"""),
     ("""PUT""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """put/""" + "$" + """id<[^/]+>""", """controllers.updateController.update(id:Long)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """post""", """controllers.createController.create"""),
@@ -65,7 +65,7 @@ class Routes(
 
   // @LINE:10
   private[this] lazy val controllers_getController_get0_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), DynamicPart("id", """[^/]+""",true)))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("get/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_getController_get0_invoker = createInvoker(
     getController_2.get(fakeValue[Long]),
@@ -75,7 +75,7 @@ class Routes(
       "get",
       Seq(classOf[Long]),
       "GET",
-      this.prefix + """""" + "$" + """id<[^/]+>""",
+      this.prefix + """get/""" + "$" + """id<[^/]+>""",
       """""",
       Seq()
     )

@@ -22,5 +22,3 @@ libraryDependencies += "com.novocode" % "junit-interface" % "0.11" % "test"
 libraryDependencies +=   "org.mockito" % "mockito-core" % "2.8.47" % "test"
 libraryDependencies += "org.mockito" % "mockito-all" % "1.9.5" % Test
 libraryDependencies += "org.mockito" % "mockito-core" % "2.10.0"
-libraryDependencies += "org.scala-lang.modules" %% "scala-parser-combinators" % "1.1.1"
-libraryDependencies += "io.spray" %% "spray-json" % "1.3.5"
