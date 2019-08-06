@@ -2,12 +2,13 @@ package controllers
 
 import akka.http.scaladsl.model.HttpHeader.ParsingResult.Ok
 import akka.japi.Option
+import akka.parboiled2.RuleTrace.Fail
 import org.scalatest.{FlatSpec, Matchers}
 
 import scala.collection.mutable.Stack
 import dao.EmployeeDAO
 import net.sf.ehcache.search.expression.EqualTo
-import play.api.mvc.ControllerComponents
+import play.api.mvc.{ControllerComponents, RequestHeader}
 import org.scalatestplus.play.guice.GuiceOneAppPerSuite
 import play.api.test.FakeRequest
 import org.mockito.Mockito._
@@ -17,6 +18,13 @@ import play.api.inject.Injector
 import play.api.inject.guice.GuiceApplicationBuilder
 import play.api.test.Helpers._
 import play.api.libs.json._
+import play.http.HttpErrorHandler
+
+import play.api.mvc._
+import play.api.mvc.Results._
+import scala.concurrent._
+import javax.inject.Singleton
+import scala.concurrent.Future
 
 class getControllerSpec extends FlatSpec with Matchers with MockitoSugar with ScalaFutures with GuiceOneAppPerSuite{
   private lazy val appBuilder: GuiceApplicationBuilder = new GuiceApplicationBuilder()
@@ -53,44 +61,39 @@ class getControllerSpec extends FlatSpec with Matchers with MockitoSugar with Sc
 //    ans should be ("true")
 //  }
 
+//
+//  "createController" should  " create the record " in{
+//
+//    val json=
+//      """{ "FirstName":"Srinidhi",
+//        |"LastName":"V",
+//        |"PhoneNumber":"4535635564"
+//        |}""".stripMargin
+//
+//    val request = FakeRequest(POST, "/post").withJsonBody(Json.parse(json))
+//    val res = route(app,request).get
+//    val resinJSON = contentAsJson(res)
+//
+//    val FirstName = (resinJSON \ "FirstName").as[String]
+//    FirstName should be ("Srinidhi")
+//
+//    val LastName = (resinJSON \ "LastName").as[String]
+//    LastName should be ("V")
+//
+//  }
 
-  "createController" should  " create the record " in{
+  "createController" should  " Not accept null FirstName " in {
 
-    val json=
-      """{ "FirstName":"Srinidhi",
+    val json =
+      """{
         |"LastName":"V",
         |"PhoneNumber":"4535635564"
         |}""".stripMargin
 
     val request = FakeRequest(POST, "/post").withJsonBody(Json.parse(json))
-    val res = route(app,request).get
+    val res = route(app, request).get
     val resinJSON = contentAsJson(res)
 
-    val FirstName = (resinJSON \ "FirstName").as[String]
-    FirstName should be ("Srinidhi")
+    }
 
-    val LastName = (resinJSON \ "LastName").as[String]
-    LastName should be ("V")
-
-  }
-
-  "createController" should  " Not accept null FirstName " in{
-
-    val json=
-      """{ "FirstName":"Srinidhi",
-        |"LastName":"V",
-        |"PhoneNumber":"4535635564"
-        |}""".stripMargin
-
-    val request = FakeRequest(POST, "/post").withJsonBody(Json.parse(json))
-    val res = route(app,request).get
-    val resinJSON = contentAsJson(res)
-
-    val FirstName = (resinJSON \ "FirstName").as[String]
-    FirstName should be ("Srinidhi")
-
-    val LastName = (resinJSON \ "LastName").as[String]
-    LastName should be ("V")
-
-  }
 }

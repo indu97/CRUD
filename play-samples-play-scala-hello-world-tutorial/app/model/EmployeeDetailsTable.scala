@@ -8,7 +8,7 @@ import slick.lifted.Tag
 case class Employeestructure (
 
                                             id:Option[Long],
-                                            FirstName : String,
+                                            FirstName : Option[String],
                                             LastName : String,
                                             PhoneNumber : String
                                           )
@@ -17,7 +17,7 @@ case class Employeestructure (
 
 class EmployeeDetailsTable(tag: Tag) extends Table[Employeestructure](tag, "employee_details") {
   def id = column[Option[Long]]("id", O.PrimaryKey,O.AutoInc)
-  def FirstName = column[String]("FirstName")
+  def FirstName = column[Option[String]]("FirstName")
   def LastName = column[String]("LastName")
   def PhoneNumber = column[String]("PhoneNumber")
 
@@ -43,7 +43,7 @@ object Employeestructure {
 
   implicit val reads: Reads[Employeestructure] = (
     (JsPath \ "id").readNullable[Long] and
-      (JsPath \ "FirstName").read[String] and
+      (JsPath \ "FirstName").readNullable[String] and
       (JsPath \ "LastName").read[String] and
       (JsPath \ "PhoneNumber").read[String])(Employeestructure.apply _)
 }

@@ -4,7 +4,7 @@
 		module="play-scala-seed_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20190802162531"
+		publication="20190805162405"
 	>
 		<description>
 		play-scala-seed
