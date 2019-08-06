@@ -16,9 +16,9 @@ class updateController  @Inject()(cc: ControllerComponents,variab: EmployeeDAO) 
 
 
   def update(id: Long) = Action.async(parse.json) { implicit request =>
-    var employee = request.body.as(Employeestructure.reads)
-    var resultObj = variab.updateEmployeestructure(id, employee)
-    var result = Await.result(resultObj, Duration.Inf)
+    val employee = request.body.as(Employeestructure.reads)
+    val resultObj = variab.updateEmployeestructure(id, employee)
+    val result = Await.result(resultObj, Duration.Inf)
     Future { Ok(Json.toJson(result)) }
     //}
   }

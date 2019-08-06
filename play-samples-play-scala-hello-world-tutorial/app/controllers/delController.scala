@@ -3,6 +3,7 @@ package controllers
 import scala.concurrent.Future
 import dao.EmployeeDAO
 import javax.inject.Inject
+import play.api.http.Writeable
 import play.api.libs.json.Json
 import play.api.mvc.{AbstractController, ControllerComponents}
 
@@ -13,8 +14,16 @@ class delController  @Inject()(cc: ControllerComponents,variab: EmployeeDAO) ext
 
   def del(id: Long) = Action.async { request =>
 
-    variab.delEmployeestructure(id).map { result =>
-      Ok("Record Deleted")
+    variab.delEmployeestructure(id).map { result => {
+      if (result == true)
+        {
+          Ok("true")
+        }
+      else
+        {
+          Ok("false")
+        }
+    }
     }
   }
 

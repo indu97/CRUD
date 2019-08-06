@@ -2,23 +2,29 @@
 [0m[[0m[0mdebug[0m] [0m[0mForking tests - parallelism = false[0m
 [0m[[0m[0mdebug[0m] [0m[0mCreate a single-thread test executor[0m
 [0m[[0m[0mdebug[0m] [0m[0mRunner for org.scalatest.tools.Framework produced 1 initial tasks for 1 tests.[0m
-[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(controllers.getControllerSpec, sbt.ForkMain$SubclassFingerscan@5842f1bf, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(controllers.getControllerSpec, sbt.ForkMain$SubclassFingerscan@571f01ab, false, [SuiteSelector])[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mgetControllerSpec:[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mgetController[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should take ids which are present[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mgetController[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should NOT accept ids which aren't present[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mdelController[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should NOT delete when the id doesn't exist in db[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mcreateController[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should create the record[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mcreateController[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should Not accept null FirstName[0m[0m
-[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 3 events.[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mputController[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should update values in the db if id exists[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 6 events.[0m
 [0m[[0m[0mdebug[0m] [0m[0mRunner for com.novocode.junit.JUnitFramework produced 0 initial tasks for 0 tests.[0m
 [0m[[0m[0minfo[0m] [0m[0mScalaTest[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 5 seconds, 118 milliseconds.[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 3[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 4 seconds, 307 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 6[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 3, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 6, failed 0, canceled 0, ignored 0, pending 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mSummary for JUnit not available.[0m
-[0m[[0m[0minfo[0m] [0m[0mPassed: Total 3, Failed 0, Errors 0, Passed 3[0m
+[0m[[0m[0minfo[0m] [0m[0mPassed: Total 6, Failed 0, Errors 0, Passed 6[0m
 [0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	controllers.getControllerSpec[0m
