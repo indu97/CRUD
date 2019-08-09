@@ -1,34 +1,17 @@
 package controllers
 
 import akka.actor.ActorSystem
-import akka.http.scaladsl.model.HttpHeader.ParsingResult.Ok
-import akka.japi.Option
-import akka.parboiled2.RuleTrace.Fail
 import akka.stream.ActorMaterializer
-import org.scalatest.{FlatSpec, Matchers}
-
-import scala.collection.mutable.Stack
 import dao.EmployeeDAO
-import net.sf.ehcache.search.expression.EqualTo
-import play.api.mvc.{ControllerComponents, RequestHeader}
-import org.scalatestplus.play.guice.GuiceOneAppPerSuite
-import play.api.test.{FakeHeaders, FakeRequest}
-import org.mockito.Mockito._
 import org.scalatest.concurrent.ScalaFutures
 import org.scalatest.mockito.MockitoSugar
+import org.scalatest.{FlatSpec, Matchers}
+import org.scalatestplus.play.guice.GuiceOneAppPerSuite
 import play.api.inject.Injector
 import play.api.inject.guice.GuiceApplicationBuilder
-import play.api.test.Helpers._
 import play.api.libs.json._
-import play.http.HttpErrorHandler
-import play.api.mvc._
-import play.api.mvc.Results._
-
-import scala.concurrent._
-import javax.inject.Singleton
-import play.api.http.Writeable
-
-import scala.concurrent.Future
+import play.api.test.FakeRequest
+import play.api.test.Helpers._
 
 class getControllerSpec extends FlatSpec with Matchers with MockitoSugar with ScalaFutures with GuiceOneAppPerSuite{
   private lazy val appBuilder: GuiceApplicationBuilder = new GuiceApplicationBuilder()
@@ -77,6 +60,7 @@ class getControllerSpec extends FlatSpec with Matchers with MockitoSugar with Sc
   }
 
 
+  //functionality check
   "createController" should  " create the record " in{
 
     val json=
@@ -141,8 +125,7 @@ class getControllerSpec extends FlatSpec with Matchers with MockitoSugar with Sc
   val res = route(app, request).get
   //print(status(res))
   assert(status(res) == 200)
-
-
+  
 }
 
 }
