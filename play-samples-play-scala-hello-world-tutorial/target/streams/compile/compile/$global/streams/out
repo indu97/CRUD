@@ -1,4 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\app\controllers\delController.scala:18:9: Cannot write an instance of Boolean to HTTP response. Try to define a Writeable[Boolean][0m
-[0m[[0m[31merror[0m] [0m[0m      Ok(result)[0m
-[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\indu.c\Downloads\play-samples-play-scala-hello-world-tutorial\app\controllers\createController.scala:16:8: not found: object spray[0m
+[0m[[0m[31merror[0m] [0m[0mimport spray.json._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

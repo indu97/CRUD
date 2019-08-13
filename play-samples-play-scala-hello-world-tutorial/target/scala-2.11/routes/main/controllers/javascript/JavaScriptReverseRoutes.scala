@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/indu.c/Downloads/play-samples-play-scala-hello-world-tutorial/conf/routes
-// @DATE:Tue Aug 06 11:34:52 IST 2019
+// @DATE:Mon Aug 12 11:36:07 IST 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -10,7 +10,7 @@ import _root_.controllers.Assets.Asset
 // @LINE:10
 package controllers.javascript {
 
-  // @LINE:15
+  // @LINE:22
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -18,7 +18,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:15
+    // @LINE:22
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -48,9 +48,39 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:11
+    def List: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.getController.List",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "get"})
+        }
+      """
+    )
+  
   }
 
-  // @LINE:12
+  // @LINE:13
+  class ReversesearchController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:13
+    def search: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.searchController.search",
+      """
+        function(FirstName0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "search/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("FirstName", FirstName0))})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:17
   class ReverseupdateController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -58,7 +88,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:12
+    // @LINE:17
     def update: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.updateController.update",
       """
@@ -70,7 +100,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:13
+  // @LINE:18
   class ReversecreateController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -78,7 +108,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:13
+    // @LINE:18
     def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.createController.create",
       """
@@ -88,9 +118,19 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:19
+    def createFromFile: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.createController.createFromFile",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "postFile"})
+        }
+      """
+    )
+  
   }
 
-  // @LINE:11
+  // @LINE:15
   class ReversedelController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -98,7 +138,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:11
+    // @LINE:15
     def del: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.delController.del",
       """

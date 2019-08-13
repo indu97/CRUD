@@ -8,8 +8,15 @@
 
 
 GET         /get/:id                            controllers.getController.get(id: Long)
+GET         /get                            controllers.getController.List
+
+GET         /search/:FirstName                          controllers.searchController.search(FirstName : String)
+
 DELETE     /del/:id                         controllers.delController.del(id: Long)
+
 PUT     /put/:id                            controllers.updateController.update(id: Long)
-POST    /post                            controllers.createController.create
+POST    /post                               controllers.createController.create
+POST    /postFile                           controllers.createController.createFromFile
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

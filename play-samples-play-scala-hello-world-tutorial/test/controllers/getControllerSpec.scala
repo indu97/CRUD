@@ -125,7 +125,7 @@ class getControllerSpec extends FlatSpec with Matchers with MockitoSugar with Sc
   val res = route(app, request).get
   //print(status(res))
   assert(status(res) == 200)
-  
+
 }
 
 }

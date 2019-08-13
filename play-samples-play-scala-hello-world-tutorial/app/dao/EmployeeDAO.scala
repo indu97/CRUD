@@ -16,7 +16,20 @@ class EmployeeDAO @Inject() (protected val dbConfigProvider: DatabaseConfigProvi
   val employeeDetailsTable = TableQuery[EmployeeDetailsTable]
 
   def getEmployeestructure(id: Long): Future[Option[Employeestructure]] = {
-    db.run(employeeDetailsTable.filter(_.id  === id).result.headOption)
+    db.run(employeeDetailsTable.filter(_.id === id).result.headOption)
+  }
+
+  def searchEmployeestructure(FirstName : String): Future[List[Employeestructure]] = {
+    db.run(employeeDetailsTable.filter(_.FirstName === FirstName).to[List].result)
+  }
+
+  def count(): Future[Int] = {
+    db.run(employeeDetailsTable.map(_.id).length.result)
+  }
+
+  def ListEmployeestructure: Future[List[Employeestructure]] = {
+
+    db.run(employeeDetailsTable.to[List].result)
   }
 
   def delEmployeestructure(id: Long): Future[Boolean] = {
@@ -26,7 +39,7 @@ class EmployeeDAO @Inject() (protected val dbConfigProvider: DatabaseConfigProvi
     }
   }
 
-  def updateEmployeestructure(id: Long, iproduct:Employeestructure ): Future[Option[Employeestructure]] = {
+  def updateEmployeestructure(id: Long, iproduct: Employeestructure): Future[Option[Employeestructure]] = {
 
     val newRecord: Employeestructure = iproduct.copy(id = Option(id))
     db.run(employeeDetailsTable.filter(_.id === id).update(newRecord)).map {
@@ -35,10 +48,33 @@ class EmployeeDAO @Inject() (protected val dbConfigProvider: DatabaseConfigProvi
     }
   }
 
-  def insert(iproduct:Employeestructure): Future[Employeestructure] = {
+  def insert(iproduct: Employeestructure): Future[Employeestructure] = {
     //val currentDate = new Date(Calendar.getInstance().getTime().getTime());
     val empNew: Employeestructure = iproduct.copy(id = iproduct.id, FirstName = iproduct.FirstName, LastName = iproduct.LastName, PhoneNumber = iproduct.PhoneNumber)
 
     db.run((employeeDetailsTable returning employeeDetailsTable.map(_.id) into ((employeeDetailsTable, id) => employeeDetailsTable.copy(id = id))) += empNew)
   }
+
+  //  def insertFromFile(iproduct:Employeestructure): Future[Employeestructure] = {
+  //    //val currentDate = new Date(Calendar.getInstance().getTime().getTime());
+  //    val empNew: Employeestructure = iproduct.copy(id = iproduct.id, FirstName = iproduct.FirstName, LastName = iproduct.LastName, PhoneNumber = iproduct.PhoneNumber)
+  //
+  //    db.run((employeeDetailsTable returning employeeDetailsTable.map(_.id) into ((employeeDetailsTable, id) => employeeDetailsTable.copy(id = id))) += empNew)
+  //  }
+  //
+//  def insertFromFile(iproduct: Employeestructure): Future[List[Employeestructure]] = {
+//    //val currentDate = new Date(Calendar.getInstance().getTime().getTime());
+//
+//    val bufferedSource = io.Source.fromFile("/tmp/finance.csv")
+//    for (line <- bufferedSource.getLines) {
+//      val cols = line.split(",").map(_.trim) // do whatever you want with the columns here
+//      println(s"${cols(0)}|${cols(1)}|${cols(2)}|${cols(3)}")  }  bufferedSource.close
+//
+//      val newProduct: List[Employeestructure] = accessGroupMenu.copy(menuId = accessGroupMenu.menuId, groupId = accessGroupMenu.groupId, active = 1, createdBy = accessGroupMenu.createdBy, createdDate = Some(currentDate), modifidedBy = accessGroupMenu.modifidedBy, modifiedDate = Some(currentDate))
+//
+//      db.run(employeeDetailsTable += newProduct).map(result => accessGroupMenu)
+//    }
+//  }
+
+
 }

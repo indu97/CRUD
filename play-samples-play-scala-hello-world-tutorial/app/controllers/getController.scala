@@ -16,5 +16,10 @@ class getController  @Inject()(cc: ControllerComponents,variab: EmployeeDAO) ext
     }
   }
 
+  def List = Action.async { request =>
+    variab.ListEmployeestructure.map { result =>
+      Ok(Json.toJson(result))
+    }
+  }
 
 }
